@@ -1,0 +1,20 @@
+1. Open the following link and signup for a free api key: http://www.omdbapi.com/
+2. Make a page with two fields: name for the movie, year launched
+3. Add a button to submit the search query
+4. On the click of the button, make the API call and retrieve search results.
+5. First, just map a single movie into a HTML element and insert it into a UL element
+as an LI element
+6. Then, map the entire array into HTML elements using the map function and insert
+into UL as LI elements
+7. By this point, you'll have a list of movies on your page
+8. Now, implement the year launched filter
+9. If a value is present in the year launched field, read that value and filter the
+movies array for movies that are launched in or after that year
+10. Then show the updated list of movies with the year launched filter applied
+11. If no movie is found against the name entered by the user, generate a popup in the
+center of the screen with an error message. This popup will be closed by a button
+present in the popup
+12. Lastly, the movie data on the screen must not be lost when the page is refreshed.
+For this, store the data in localStorage when the page is being unloaded, and
+retrieve the data from localstorage when page is loaded. If no data is present in
+localStorage, show a blank list.
