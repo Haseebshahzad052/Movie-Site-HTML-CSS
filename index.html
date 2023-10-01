@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Guide App</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="search-container">
+        <label class="lablemov" for="Movie">Movie Name</label>
+        <br />
+        <input
+          type="text"
+          placeholder="Enter movie name here..."
+          id="movie-name"
+          value="dark knight"
+        />
+        <br />
+        <label class="lablemov" for="Movie">Movie Year</label>
+        <br />
+        <input
+          type="text"
+          placeholder="Enter movie year here..."
+          id="movie-year"
+          value="Any"
+        />
+        <button id="search-btn">Search</button>
+      </div>
+      <div id="result"></div>
+    </div>
+    <script src="key.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
