@@ -7,17 +7,19 @@
 body {
   height: 100vh;
 }
+.data h2 {
+  font-size: 1.2em;
+}
+.data {
+  padding: 20px;
+}
 .container {
   font-size: 16px;
-  width: 90vw;
-  max-width: 37.5em;
-  margin-top: 85px;
+  width: 100%;
   padding: 3em 1.8em;
   background-color: #201f28;
   position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
+
   border-radius: 0.6em;
   box-shadow: 1.2em 2em 3em rgba(0, 0, 0, 0.2);
 }
@@ -47,11 +49,16 @@ body {
   cursor: pointer;
 }
 #result {
+  display: flex;
+  flex-wrap: wrap;
   color: #ffffff;
 }
 .info {
   position: relative;
   display: grid;
+  padding: 50px;
+  height: 400px;
+  width: 400px;
   grid-template-columns: 4fr 8fr;
   align-items: center;
   margin-top: 1.2em;

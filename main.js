@@ -7,7 +7,7 @@ let result = document.getElementById("result");
 let getMovie = () => {
   let movieName = movieNameRef.value;
   let movieYear = movieYearRef.value;
-  let url = `http://www.omdbapi.com/?t=${movieName}&y=${movieYear}&apikey=${key}`;
+  let url = `http://www.omdbapi.com/?s=${movieName}&y=${movieYear}&apikey=${key}`;
   //If input field is empty
   if (movieName.length <= 0) {
     result.innerHTML = `<h3 class="msg">Please Enter A Movie Name</h3>`;
@@ -17,32 +17,31 @@ let getMovie = () => {
     fetch(url)
       .then((resp) => resp.json())
       .then((data) => {
+        console.log(data);
+        const results = data.Search;
         //If movie exists in database
-        if (data.Response == "True") {
-          result.innerHTML = `
+        if (results.length > 0) {
+          result.innerHTML = results
+            .map((data) => {
+              return `
             <div class="info">
                 <img src=${data.Poster} class="poster">
-                <div>
+                <div class="data">
                     <h2>${data.Title}</h2>
-                    <div class="rating">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Star_icon_stylized.svg/512px-Star_icon_stylized.svg.png?20220926045328">
-                        <h4>${data.imdbRating}</h4>
-                    </div>
+                    
                     
                     <ul class="details">
                         <li>${data.Year}</li>
-                        <li>${data.Runtime}</li>
-                        <li>${data.Genre}</li>
+                        <li>${data.Type}</li>
                     </ul>
                     
                 </div>
             </div>
-            <h3>Plot:</h3>
-            <p>${data.Plot}</p>
-            <h3>Cast:</h3>
-            <p>${data.Actors}</p>
+            
             
         `;
+            })
+            .join("");
         }
         //If movie does NOT exists in database
         else {
