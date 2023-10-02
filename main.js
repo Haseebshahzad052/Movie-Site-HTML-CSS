@@ -1,8 +1,10 @@
+let key = "fa6f257e";
 //Initial References
 let movieNameRef = document.getElementById("movie-name");
 let movieYearRef = document.getElementById("movie-year");
 let searchBtn = document.getElementById("search-btn");
 let result = document.getElementById("result");
+
 //Function to fetch data from API
 let getMovie = () => {
   let movieName = movieNameRef.value;
@@ -56,4 +58,5 @@ let getMovie = () => {
   }
 };
 searchBtn.addEventListener("click", getMovie);
+
 window.addEventListener("load", getMovie);
